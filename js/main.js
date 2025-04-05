@@ -108,3 +108,16 @@ document.getElementById('registrarPrestamo').addEventListener('click', function(
         alert('Por favor, ingrese un monto válido y una fecha.');
     }
 });
+
+function marcarComoPagado(index) {
+    // Marcar el préstamo como pagado
+    clientes[index].tienePrestamo = false; // Cambiar el estado del préstamo
+    clientes[index].interesMensual = 0; // Reiniciar el interés mensual
+    clientes[index].montoPrestado = 0; // Reiniciar el monto del préstamo
+
+    // Mostrar un mensaje de alerta
+    alert('El préstamo ha sido marcado como pagado. Ahora puede solicitar un nuevo préstamo.');
+
+    // Actualizar la tabla
+    actualizarTabla();
+}
